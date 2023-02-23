@@ -26,3 +26,13 @@ form {
   align-content: flex-start;
   align-items: flex-start;
 }
+
+body {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.movies {
+  padding-left: 20px;
+}
