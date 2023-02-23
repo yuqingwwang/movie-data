@@ -60,16 +60,18 @@ for (let i = 1; i < 5; i++) {
 
 const addButton = document.getElementById('addButton');
 const container = document.getElementById('container');
+const form = document.querySelector('form');
 
 addButton.addEventListener("click", handleSubmit);
-
 
 function handleSubmit () {
   const newDiv = document.createElement("div");
 
   const name = document.getElementById('name').value;
-  const namdeNode = document.createTextNode(name);
-  newDiv. appendChild(namdeNode);
+  const nameElement= document.createElement('h2');
+  nameElement.textContent = name;
+  nameElement.className = 'name';
+  newDiv.appendChild(nameElement);
 
   const inputList = ['cast', 'plot', 'rating', 'runtime', 'year'];
 
@@ -78,10 +80,13 @@ function handleSubmit () {
     const val = document.getElementById(key).value;
 
     if(val) {
-      const newNode = document.createTextNode(key + ': '+ val)
-      newDiv.appendChild(document.createElement("br"));
-      newDiv.appendChild(newNode);
+      const newElement = document.createElement('p');
+      newElement.textContent = key + ': '+ val;
+      newElement.className = key;
+      newDiv.appendChild(newElement);
     }
   }
   container.appendChild(newDiv);
+  // Reset the form
+  form.reset();
 }

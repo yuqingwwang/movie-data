@@ -13,3 +13,16 @@ h2 {
 p {
   font-size: 15px;
 }
+
+.plot {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+}
