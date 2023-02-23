@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link href="//fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<head><title>Movie Data</title></head>
+<body>
+  <h1>Movie Data</h1>
+  <div class="newMovie">
+    <h2>Add a new movie</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" size="10"> <br>
+      <label for="cast">Cast:</label>
+      <input type="text" id="cast" name="cast" size="10"> <br>
+      <label for="plot">Plot:</label>
+      <input type="text" id="plot" name="plot" size="20"> <br>
+      <label for="rating">Rating: </label>
+      <input type="number" id="rating" name="rating" size="10"> <br>
+      <label for="runtime">Runtime: </label>
+      <input type="number" id="runtime" name="runtime" size="10"> <br>
+      <label for="year">Year:</label>
+      <input type="number" id="year" name="year"
+        min="1900" max="2023" size="10"> <br><br>
+    </form>
+    <button type='button' id="addButton"> Submit</button>
+  </div>
+  <div class="movies">
+    <div id="container"></div>
+    <div id="film1">
+      <h2>text</h2>
+    </div>
+    <div id="film2">
+      <h2>text</h2>
+    </div>
+    <div id="film3">
+      <h2>text</h2>
+    </div>
+    <div id="film4">
+      <h2>text</h2>
+    </div>
+  </div>
+  <script src="./App.js"></script>
+  <footer></footer>
+</body>
+</html>
