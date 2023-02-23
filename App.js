@@ -35,38 +35,28 @@ let movieData = {
 };
 
 const [film1, film2, film3, film4 ] = Object.keys(movieData)
-
-// loop through four films
-for (let i = 1; i < 5; i++) {
-
-  const filmName = Object.keys(movieData)[i-1];
-
-  document.getElementById(`film${i}`).querySelector('h2').textContent = filmName;
-
-  const sortedKeys = Object.keys(movieData[filmName]).sort();
-
-  // change list of casts into string
-  movieData[filmName].cast = movieData[filmName].cast.join(", ");
-
-  // loop through all keys
-  for (const key of sortedKeys) {
-    const formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
-    const p = document.createElement("p");
-    p.className = key;
-    p.innerHTML = formattedKey + ': '+ movieData[filmName][key];
-    document.getElementById(`film${i}`).appendChild(p)
-  }
-}
-
 const addButton = document.getElementById('addButton');
 const container = document.getElementById('container');
 const form = document.querySelector('form');
 
 addButton.addEventListener("click", handleSubmit);
 
+function formattedKey(key) {
+  return key.charAt(0).toUpperCase() + key.slice(1)
+}
+
+function createElement(key, val) {
+  const newElement = document.createElement('p');
+  newElement.textContent = formattedKey(key) + ': '+ val;
+  newElement.className = key;
+
+  return newElement
+}
+
 function handleSubmit () {
   const newDiv = document.createElement("div");
 
+  // adding film title as h2
   const name = document.getElementById('name').value;
   const nameElement= document.createElement('h2');
   nameElement.textContent = name;
@@ -75,18 +65,38 @@ function handleSubmit () {
 
   const inputList = ['cast', 'plot', 'rating', 'runtime', 'year'];
 
-  // get the value of the input field
+  // get the value of the other input fields (if filled)
   for (key of inputList) {
     const val = document.getElementById(key).value;
 
     if(val) {
-      const newElement = document.createElement('p');
-      newElement.textContent = key + ': '+ val;
-      newElement.className = key;
+      const newElement = createElement(key, val)
       newDiv.appendChild(newElement);
     }
   }
   container.appendChild(newDiv);
   // Reset the form
   form.reset();
+}
+
+// initialize; loop through four films
+for (let i = 1; i < 5; i++) {
+  const filmName = Object.keys(movieData)[i-1];
+
+  // set film title
+  document.getElementById(`film${i}`).querySelector('h2').textContent = filmName;
+
+  // sort keys to make display consistent
+  const sortedKeys = Object.keys(movieData[filmName]).sort();
+
+  // change list of casts into string
+  movieData[filmName].cast = movieData[filmName].cast.join(", ");
+
+  // loop through all keys and add the elements
+  for (const key of sortedKeys) {
+    const p = document.createElement("p");
+    p.className = key;
+    p.innerHTML = formattedKey(key) + ': '+ movieData[filmName][key];
+    document.getElementById(`film${i}`).appendChild(p)
+  }
 }

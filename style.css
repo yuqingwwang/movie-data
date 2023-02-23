@@ -1,4 +1,4 @@
-p, h1, h2, label{
+p, h1, h2, label, footer {
   font-family: 'Bree Serif', serif;;
 }
 
@@ -33,6 +33,14 @@ body {
   padding: 10px;
 }
 
+
+.newMovie {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+}
+
 .movies {
-  padding-left: 20px;
+  padding-left: 40px;
 }

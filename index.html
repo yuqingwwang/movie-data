@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="./style.css">
 <head><title>Movie Data</title></head>
 <body>
-  <h1>Movie Data</h1>
+  <h1 class="title">Movie Data 🎬</h1>
+  <!-- section for adding a new movie -->
   <div class="newMovie">
     <h2>Add a new movie</h2>
     <form>
@@ -17,7 +18,7 @@
         for="cast">Cast:
       </label>
       <input
-        type="text" id="cast" name="cast" placeholder='Eva Green, Juno Temple' size="30"> <br>
+        type="text" id="cast" name="cast" placeholder='Eva Green, Juno Temple' size="25"> <br>
       <div class="plot">
       <label
         for="plot">Plot:
@@ -46,23 +47,23 @@
     </form>
     <button type='button' id="addButton"> Submit</button>
   </div>
+  <!-- section for displaying the movie list -->
   <div class="movies">
     <h2>Movie List</h2>
     <div id="container"></div>
     <div id="film1">
-      <h2>text</h2>
+      <h2></h2>
     </div>
     <div id="film2">
-      <h2>text</h2>
+      <h2></h2>
     </div>
     <div id="film3">
-      <h2>text</h2>
+      <h2></h2>
     </div>
     <div id="film4">
-      <h2>text</h2>
+      <h2></h2>
     </div>
   </div>
   <script src="./App.js"></script>
-  <footer></footer>
 </body>
 </html>
