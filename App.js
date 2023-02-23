@@ -34,12 +34,17 @@ let movieData = {
   },
 };
 
-const [film1, film2, film3, film4 ] = Object.keys(movieData)
+let allFilms = Object.keys(movieData);
+const [film1, film2, film3, film4 ] = allFilms;
+// const sortedFilms = allFilms.sort();
 const addButton = document.getElementById('addButton');
+const sortButton = document.getElementById('sortButton');
+
 const container = document.getElementById('container');
 const form = document.querySelector('form');
 
 addButton.addEventListener("click", handleSubmit);
+// sortButton.addEventListener("click", console.log('sort'));
 
 function formattedKey(key) {
   return key.charAt(0).toUpperCase() + key.slice(1)
@@ -79,24 +84,28 @@ function handleSubmit () {
   form.reset();
 }
 
-// initialize; loop through four films
-for (let i = 1; i < 5; i++) {
-  const filmName = Object.keys(movieData)[i-1];
 
+let counter = 1;
+
+for (const film of Object.keys(movieData)) {
   // set film title
-  document.getElementById(`film${i}`).querySelector('h2').textContent = filmName;
+  document.getElementById(`film${counter}`).querySelector('h2').textContent = film;
 
   // sort keys to make display consistent
-  const sortedKeys = Object.keys(movieData[filmName]).sort();
+  const sortedKeys = Object.keys(movieData[film]).sort();
 
   // change list of casts into string
-  movieData[filmName].cast = movieData[filmName].cast.join(", ");
+  if (typeof(movieData[film].cast) !== 'string') {
+    movieData[film].cast = movieData[film].cast.join(", ");
+  }
 
   // loop through all keys and add the elements
   for (const key of sortedKeys) {
     const p = document.createElement("p");
     p.className = key;
-    p.innerHTML = formattedKey(key) + ': '+ movieData[filmName][key];
-    document.getElementById(`film${i}`).appendChild(p)
+    p.innerHTML = formattedKey(key) + ': '+ movieData[film][key];
+    document.getElementById(`film${counter}`).appendChild(p)
   }
+
+  counter++;
 }
