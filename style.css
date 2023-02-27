@@ -3,7 +3,7 @@ p, h1, h2, h3, label, footer {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 h2 {
@@ -37,7 +37,19 @@ body {
   padding: 10px;
 }
 
+.flexCols {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
 
+.intro {
+  max-width: 200px;
+}
+
+img{
+  max-width: 200px;
+}
 .newMovie {
   align-items: flex-start;
   display: flex;

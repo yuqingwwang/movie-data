@@ -6,69 +6,78 @@
   <title>Movie Data</title>
 </head>
 <body>
-  <h1 class="title">Movie Data 🎬</h1>
-  <!-- section for adding a new movie -->
-  <div class="newMovie">
-    <h2>Add a new movie</h2>
-    <form>
-      <label
-        for="name">Name:
-      </label>
-      <input
-        type="text" id="name" name="name" placeholder='Cracks' size="20"> <br>
-      <label
-        for="cast">Cast:
-      </label>
-      <input
-        type="text" id="cast" name="cast" placeholder='Eva Green, Juno Temple' size="25"> <br>
-      <div class="plot">
-      <label
-        for="plot">Plot:
-      </label>
-      <textarea
-        rows="4" type='text' id="plot" name="plot"
-        placeholder='Jealousy flares after the headmistress of an elite boarding school for girls becomes obsessed with a new student' size="30"></textarea> <br>
-      </div>
-      <label
-        for="rating">Rating: </label>
-      <input
-        type="number" id="rating" name="rating"
-        min=0 max=10 placeholder=8 step="0.1" size="5"> <br>
-      <label
-        for="runtime">Runtime:
-      </label>
-      <input
-        type="number" id="runtime" name="runtime"
-        placeholder='104' size="5"> <br>
-      <label
-        for="year">Year:
-      </label>
-      <input
-        type="number" id="year" name="year"
-        placeholder='2009' min="1900" max="2023" size="10"> <br><br>
-    </form>
-    <button type='button' id="addButton"> Submit</button>
+  <div class="intro">
+    <h1 class="title">Movie Data 🎬</h1>
+    <p>Film lovers, welcome home. <br><br>
+      Discover the best Wes Anderson movies of all time,
+      and add your personal favorites to the list.
+    </p>
+    <img src="./images/wes.gif" alt="Wes Anderson">
   </div>
-  <!-- section for displaying the movie list -->
-  <div class="movies">
-    <h2>Movie List</h2>
-    <div id="container"></div>
-    <div id="defaultFilm">
-      <div id="film1">
-        <h3></h3>
-        <button id='button1' class="toggle-button">show/hide</button>
-      </div>
-      <div id="film2">
-        <h3></h3>
-        <button id='button2' class="toggle-button">show/hide</button>
-      </div>
-      <div id="film3">
-        <h3></h3>
-        <button id='button3' class="toggle-button">show/hide</button>
-      </div>
-      <div id="film4">
-        <h3></h3>
-        <button id='button4' class="toggle-button">show/hide</button>
+  <!-- section for adding a new movie -->
+  <div class ='flexCols'>
+    <div class="newMovie">
+      <h2>Add a new movie</h2>
+      <form>
+        <label
+          for="name">Name:
+        </label>
+        <input
+          type="text" id="name" name="name" placeholder='Isle of Dogs' size="20"> <br>
+        <label
+          for="cast">Cast:
+        </label>
+        <input
+          type="text" id="cast" name="cast" placeholder='Bryan Cranston, Koyu Rankin' size="25"> <br>
+        <div class="plot">
+        <label
+          for="plot">Plot:
+        </label>
+        <textarea
+          rows="4" type='text' id="plot" name="plot"
+          placeholder="Set in Japan, Isle of Dogs follows a boy's odyssey in search of his lost dog." size="30"></textarea> <br>
+        </div>
+        <label
+          for="rating">Rating: </label>
+        <input
+          type="number" id="rating" name="rating"
+          min=0 max=10 placeholder=7.8 step="0.1" size="5"> <br>
+        <label
+          for="runtime">Runtime:
+        </label>
+        <input
+          type="number" id="runtime" name="runtime"
+          placeholder='101' size="5"> <br>
+        <label
+          for="year">Year:
+        </label>
+        <input
+          type="number" id="year" name="year"
+          placeholder='2018' min="1980" max="2023" size="10"> <br><br>
+      </form>
+      <button type='button' id="addButton"> Submit</button>
+    </div>
+    <!-- section for displaying the movie list -->
+    <div class="movies">
+      <h2>Movie List</h2>
+      <div id="container"></div>
+      <div id="defaultFilm">
+        <div id="film1">
+          <h3></h3>
+          <button id='button1' class="toggle-button">show/hide</button>
+        </div>
+        <div id="film2">
+          <h3></h3>
+          <button id='button2' class="toggle-button">show/hide</button>
+        </div>
+        <div id="film3">
+          <h3></h3>
+          <button id='button3' class="toggle-button">show/hide</button>
+        </div>
+        <div id="film4">
+          <h3></h3>
+          <button id='button4' class="toggle-button">show/hide</button>
+        </div>
       </div>
     </div>
   </div>
