@@ -36,15 +36,34 @@ let movieData = {
 
 let allFilms = Object.keys(movieData);
 const [film1, film2, film3, film4 ] = allFilms;
-// const sortedFilms = allFilms.sort();
 const addButton = document.getElementById('addButton');
-const sortButton = document.getElementById('sortButton');
+
+const toggleButtons = document.querySelectorAll(".toggle-button");
+
+toggleButtons.forEach((button) => {
+  button.addEventListener("click", handleToggle);
+});
+
+function handleToggle(event) {
+  const button = event.target;
+  const detailsDiv = button.nextElementSibling;
+}
+
+function handleToggle(event) {
+  const button = event.target;
+  const detailsDiv = button.nextElementSibling;
+
+  if (detailsDiv.style.display === "none") {
+    detailsDiv.style.display = "block";
+  } else {
+    detailsDiv.style.display = "none";
+  }
+}
 
 const container = document.getElementById('container');
 const form = document.querySelector('form');
 
 addButton.addEventListener("click", handleSubmit);
-// sortButton.addEventListener("click", console.log('sort'));
 
 function formattedKey(key) {
   return key.charAt(0).toUpperCase() + key.slice(1)
@@ -99,12 +118,17 @@ for (const film of Object.keys(movieData)) {
     movieData[film].cast = movieData[film].cast.join(", ");
   }
 
+  const details = document.createElement("div");
+  details.className = 'hidden';
+  details.id = `details${counter}`;
+  document.getElementById(`film${counter}`).appendChild(details);
+
   // loop through all keys and add the elements
   for (const key of sortedKeys) {
     const p = document.createElement("p");
     p.className = key;
     p.innerHTML = formattedKey(key) + ': '+ movieData[film][key];
-    document.getElementById(`film${counter}`).appendChild(p)
+    document.getElementById(`details${counter}`).appendChild(p)
   }
 
   counter++;
