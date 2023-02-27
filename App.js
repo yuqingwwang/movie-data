@@ -80,9 +80,9 @@ function createElement(key, val) {
 function handleSubmit () {
   const newDiv = document.createElement("div");
 
-  // adding film title as h2
+  // adding film title as h3
   const name = document.getElementById('name').value;
-  const nameElement= document.createElement('h2');
+  const nameElement= document.createElement('h3');
   nameElement.textContent = name;
   nameElement.className = 'name';
   newDiv.appendChild(nameElement);
@@ -108,7 +108,7 @@ let counter = 1;
 
 for (const film of Object.keys(movieData)) {
   // set film title
-  document.getElementById(`film${counter}`).querySelector('h2').textContent = film;
+  document.getElementById(`film${counter}`).querySelector('h3').textContent = film;
 
   // sort keys to make display consistent
   const sortedKeys = Object.keys(movieData[film]).sort();
@@ -121,6 +121,7 @@ for (const film of Object.keys(movieData)) {
   const details = document.createElement("div");
   details.className = 'hidden';
   details.id = `details${counter}`;
+  details.style.display = 'none'; 
   document.getElementById(`film${counter}`).appendChild(details);
 
   // loop through all keys and add the elements
