@@ -44,10 +44,10 @@ toggleButtons.forEach((button) => {
   button.addEventListener("click", handleToggle);
 });
 
-function handleToggle(event) {
-  const button = event.target;
-  const detailsDiv = button.nextElementSibling;
-}
+// function handleToggle(event) {
+//   const button = event.target;
+//   const detailsDiv = button.nextElementSibling;
+// }
 
 function handleToggle(event) {
   const button = event.target;
