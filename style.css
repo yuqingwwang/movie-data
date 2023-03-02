@@ -1,7 +1,11 @@
-p, h1, h2, h3, label, footer {
-  font-family: 'Bree Serif', serif;;
+p, h3, label, footer {
+  /* font-family: 'Bree Serif', serif; */
+  font-family: 'Josefin Sans', sans-serif;
 }
 
+h1, h2 {
+  font-family: 'Bree Serif', serif;
+}
 h1 {
   font-size: 30px;
 }

@@ -1,3 +1,4 @@
+//storing initial film data
 let movieData = {
   "The Darjeeling Limited": {
     plot: "A year after their father's funeral, three brothers travel across India by train in an attempt to bond with each other.",
@@ -34,16 +35,24 @@ let movieData = {
   },
 };
 
+//retrieving names of all films
 let allFilms = Object.keys(movieData);
 const [film1, film2, film3, film4 ] = allFilms;
-const addButton = document.getElementById('addButton');
 
+// elements
+const container = document.getElementById('container');
+const form = document.querySelector('form');
+
+//buttons
+const addButton = document.getElementById('addButton');
 const toggleButtons = document.querySelectorAll(".toggle-button");
 
+addButton.addEventListener("click", handleSubmit);
 toggleButtons.forEach((button) => {
   button.addEventListener("click", handleToggle);
 });
 
+//functions
 
 function handleToggle(event) {
   const button = event.target;
@@ -55,11 +64,6 @@ function handleToggle(event) {
     detailsDiv.style.display = "none";
   }
 }
-
-const container = document.getElementById('container');
-const form = document.querySelector('form');
-
-addButton.addEventListener("click", handleSubmit);
 
 function formattedKey(key) {
   return key.charAt(0).toUpperCase() + key.slice(1)
@@ -107,7 +111,7 @@ function handleSubmit () {
   form.reset();
 }
 
-
+// looping through all films to populate the page
 let counter = 1;
 
 for (const film of Object.keys(movieData)) {
