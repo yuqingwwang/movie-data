@@ -44,10 +44,6 @@ toggleButtons.forEach((button) => {
   button.addEventListener("click", handleToggle);
 });
 
-// function handleToggle(event) {
-//   const button = event.target;
-//   const detailsDiv = button.nextElementSibling;
-// }
 
 function handleToggle(event) {
   const button = event.target;
@@ -87,7 +83,15 @@ function handleSubmit () {
   nameElement.className = 'name';
   newDiv.appendChild(nameElement);
 
+  //append a toggle button
+  const toggleButton = document.createElement('button');
+  toggleButton.textContent = 'show/hide';
+  toggleButton.className = 'toggle-button';
+  newDiv.appendChild(toggleButton);
+
   const inputList = ['cast', 'plot', 'rating', 'runtime', 'year'];
+  const detailsDiv = document.createElement('div');
+  newDiv.appendChild(detailsDiv);
 
   // get the value of the other input fields (if filled)
   for (key of inputList) {
@@ -95,7 +99,7 @@ function handleSubmit () {
 
     if(val) {
       const newElement = createElement(key, val)
-      newDiv.appendChild(newElement);
+      detailsDiv.appendChild(newElement);
     }
   }
   container.appendChild(newDiv);
@@ -121,7 +125,7 @@ for (const film of Object.keys(movieData)) {
   const details = document.createElement("div");
   details.className = 'hidden';
   details.id = `details${counter}`;
-  details.style.display = 'none'; 
+  details.style.display = 'none';
   document.getElementById(`film${counter}`).appendChild(details);
 
   // loop through all keys and add the elements
